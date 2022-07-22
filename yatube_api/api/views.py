@@ -29,7 +29,7 @@ class PostViewSet(viewsets.ModelViewSet):
         if instance.author != self.request.user:
             raise PermissionDenied('Изменение чужого контента запрещено!')
         return super(PostViewSet, self).perform_destroy(instance)
-      
+
 
 class GroupViewSet(viewsets.ReadOnlyModelViewSet):
     queryset = Group.objects.all()
